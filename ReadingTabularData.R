@@ -19,3 +19,8 @@ initial<-readd.table("file.txt",nrows=100)
 classes = sapply(initial,class)
 tabAll = read.table("file.txt",colClasses = classes) # this is a dirty fix 
 #makes code run a bit fast
+
+#we can use file connections to read file 
+con<-file("file.txt",'r',encoding = getOption("latin-1"))
+data <- read.csv(con)
+close(con)
